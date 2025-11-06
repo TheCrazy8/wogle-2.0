@@ -3,7 +3,6 @@ import random
 
 class game:
   def __init__(self):
-    enemy.__init__()
     self.start_time = datetime.datetime.now()
     self.score = 0
     self.level = 1
@@ -11,6 +10,7 @@ class game:
     self.health = 100
     self.ticks = 0
     self.start()
+    enemy.__init__()
 
   def start(self):
     print("Game started!")
