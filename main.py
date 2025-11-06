@@ -27,4 +27,4 @@ class enemy:
     self.damage = 10
 
 
-game.__init__()
+game.__init__(self)
