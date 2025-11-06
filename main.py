@@ -3,7 +3,7 @@ import random
 
 class game:
   def __init__():
-    self.start_time = datetime.datetime.now()
+    self.start_time = datetime.now()
     self.score = 0
     self.level = 1
     self.is_over = False
