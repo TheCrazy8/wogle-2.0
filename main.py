@@ -2,7 +2,7 @@ import datetime
 import random
 
 class game:
-  def __init__(self):
+  def __init__():
     self.start_time = datetime.datetime.now()
     self.score = 0
     self.level = 1
@@ -12,11 +12,11 @@ class game:
     self.start()
     enemy.__init__()
 
-  def start(self):
+  def start():
     print("Game started!")
     self.play()
 
-  def play(self):
+  def play():
     while not self.is_over == true:
       self.ticks += 1
       if enemy.attack():
@@ -27,4 +27,4 @@ class enemy:
     self.damage = 10
 
 
-game.__init__(self)
+game.__init__()
