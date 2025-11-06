@@ -17,7 +17,7 @@ class game:
     self.play()
 
   def play(self):
-    while not self.is_over == true:
+    while not self.is_over == True:
       self.ticks += 1
       if enemy.attack():
         self.health -= enemy.damage
@@ -30,4 +30,3 @@ enemy = enemy()
 game = game()
 
 game.__init__()
-
