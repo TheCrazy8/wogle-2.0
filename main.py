@@ -26,6 +26,5 @@ class enemy:
   def __init__(self):
     self.damage = 10
 
-if True:
-  game.__init__()
-  
+
+game.__init__()
