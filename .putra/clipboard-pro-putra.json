@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "history": [
+    {
+      "id": "clipboard-1762543220273-3-7ncxwxexs",
+      "content": "ext install GitHub.copilot-workspace",
+      "timestamp": "2025-11-07T19:22:24.870Z",
+      "isPinned": false,
+      "language": "plaintext",
+      "preview": "ext install GitHub.copilot-workspace",
+      "metadata": {
+        "source": "copy"
+      }
+    },
+    {
+      "id": "clipboard-1762543102519-2-2s471w6qd",
+      "content": "ext install Naamloos.nested-file-toolkit",
+      "timestamp": "2025-11-07T19:18:22.519Z",
+      "isPinned": false,
+      "language": "plaintext",
+      "preview": "ext install Naamloos.nested-file-toolkit",
+      "metadata": {
+        "source": "copy"
+      }
+    },
+    {
+      "id": "clipboard-1762543050090-1-7z11f29rt",
+      "content": "ext install PutraAdiJaya.clipboard-manager-pro",
+      "timestamp": "2025-11-07T19:17:30.090Z",
+      "isPinned": false,
+      "language": "plaintext",
+      "preview": "ext install PutraAdiJaya.clipboard-manager-pro",
+      "metadata": {
+        "source": "copy"
+      }
+    }
+  ],
+  "pinnedItems": [],
+  "settings": {
+    "maxHistorySize": 100,
+    "autoDetectLanguage": true,
+    "showPreview": true,
+    "storageLocation": "workspace"
+  },
+  "lastModified": "2025-11-07T19:22:26.475Z"
+}

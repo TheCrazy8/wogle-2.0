@@ -1,4 +1,8 @@
 {
     "python-envs.defaultEnvManager": "ms-python.python:system",
-    "python-envs.pythonProjects": []
+    "python-envs.pythonProjects": [],
+    "clipboardManagerPro.maxHistorySize": 100,
+    "clipboardManagerPro.autoDetectLanguage": true,
+    "clipboardManagerPro.showPreview": true,
+    "clipboardManagerPro.storageLocation": "workspace"
 }
