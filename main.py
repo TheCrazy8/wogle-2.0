@@ -1,5 +1,12 @@
 import datetime
 import random
+try: 
+  from colored import Fore, Back, Style
+except Exception:
+  Fore = None
+  Back = None
+  Style = None
+  print("could not install colored text, will be default")
 
 class game:
   def __init__(self):
