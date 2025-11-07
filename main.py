@@ -26,15 +26,44 @@ class game:
   def play(self):
     while not self.is_over == True:
       self.ticks += 1
-      if enemy.attack():
+      # enemy turn
+      if enemy.turn():
         self.health -= enemy.damage
+      # player turn
+      action = input("Choose your action (attack/heal/quit): ").strip().lower()
+      if action == "attack":
+        damage = random.randint(5, 15)
+        enemy.health -= damage
+        print(f"{Fore.green}You attacked the enemy! Dealt {damage} damage!{Style.reset}")
+        self.score += damage
+        if enemy.health <= 0:
+          print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
+          self.is_over = True
+      elif action == "heal":
+        heal_amount = random.randint(10, 20)
+        self.health += heal_amount
+        print(f"{Fore.green}You healed yourself for {heal_amount} health!{Style.reset}")
+      elif action == "quit":
+        print("You quit the game.")
+        self.is_over = True
+      else:
+        print("Invalid action. Please choose attack, heal, or quit.")
 
 class enemy:
   def __init__(self):
     self.damage = 10
+    self.initialhealth = 50
+    self.health = 50
 
-  def attack(self):
-    print(f"{Fore.red}Enemy Attacked! Dealt {self.damage} damage!{Style.reset}")
+  def turn(self):
+    if self.health > self.initialhealth * 0.3:
+      attack_chance = 0.7
+    else:
+      attack_chance = 0.4
+    if random.random() < attack_chance:
+      print(f"{Fore.red}Enemy Attacked! Dealt {self.damage} damage!{Style.reset}")
+      return True
+    return False
 
 enemy = enemy()
 game = game()
