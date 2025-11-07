@@ -16,9 +16,9 @@ class game:
     self.is_over = False
     self.health = 100
     self.ticks = 0
-    self.start()
     enemy.__init__()
     items.__init__()
+    self.start()
 
   def start(self):
     print("Game started!")
