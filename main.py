@@ -46,15 +46,15 @@ class game:
         print("You quit the game.")
         self.is_over = True
       elif action == "use item":
-        if item.current_items:
-          print("Your items:", ", ".join(item.current_items))
+        if items.current_items:
+          print("Your items:", ", ".join(items.current_items))
           chosen_item = input("Which item do you want to use? ").strip()
-          if chosen_item in item.current_items:
+          if chosen_item in items.current_items:
             if chosen_item == "Health Potion":
               heal_amount = 30
               self.health += heal_amount
               print(f"{Fore.green}You used a Health Potion and healed for {heal_amount} health!{Style.reset}")
-              item.current_items.remove(chosen_item)
+              items.current_items.remove(chosen_item)
             else:
               print(f"{Fore.yellow}You used {chosen_item}, but nothing happened.{Style.reset}")
           else:
@@ -122,6 +122,6 @@ class items:
 
 enemy = enemy()
 game = game()
-item = items()
+items = items()
 
 game.__init__()
