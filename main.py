@@ -47,7 +47,7 @@ class game:
         print("You quit the game.")
         self.is_over = True
       elif action == "use item":
-        if items.current_items:
+        if items.current_items != []:
           print("Your items:", ", ".join(items.current_items))
           chosen_item = input("Which item do you want to use? ").strip()
           if chosen_item in items.current_items:
