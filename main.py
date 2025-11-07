@@ -18,6 +18,7 @@ class game:
     self.ticks = 0
     self.start()
     enemy.__init__()
+    items.__init__()
 
   def start(self):
     print("Game started!")
