@@ -33,6 +33,9 @@ class enemy:
   def __init__(self):
     self.damage = 10
 
+  def attack(self):
+    print(f"{Fore.red}Enemy Attacked! Dealt {self.damage} damage!{Style.reset}")
+
 enemy = enemy()
 game = game()
 
