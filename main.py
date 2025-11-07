@@ -121,8 +121,8 @@ class items:
   def item_count(self):
     return len(self.current_items)
 
+items = items()
 enemy = enemy()
 game = game()
-items = items()
 
 game.__init__()
