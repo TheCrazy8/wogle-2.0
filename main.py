@@ -38,7 +38,6 @@ class game:
         self.score += damage
         if enemy.health <= 0:
           print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
-          self.is_over = True
       elif action == "heal":
         heal_amount = random.randint(10, 20)
         self.health += heal_amount
@@ -48,6 +47,17 @@ class game:
         self.is_over = True
       else:
         print("Invalid action. Please choose attack, heal, or quit.")
+      # check player health
+      if self.health <= 0:
+        print(f"{Fore.red}You have been defeated! Game over.{Style.reset}")
+        self.is_over = True
+      
+      if enemy.health <= 0:
+        print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
+        enemy.initialhealth += enemy.initialhealth // 2
+        enemy.health = enemy.initialhealth
+        self.level += 1
+        print(f"Level up! You are now on level {self.level}.")
 
 class enemy:
   def __init__(self):
