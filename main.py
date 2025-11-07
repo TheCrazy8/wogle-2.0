@@ -30,7 +30,7 @@ class game:
       if enemy.turn():
         self.health -= enemy.damage
       # player turn
-      action = input("Choose your action (attack/heal/quit): ").strip().lower()
+      action = input("Choose your action (attack/heal/quit/use item): ").strip().lower()
       if action == "attack":
         damage = random.randint(5, 15)
         enemy.health -= damage
@@ -45,6 +45,22 @@ class game:
       elif action == "quit":
         print("You quit the game.")
         self.is_over = True
+      elif action == "use item":
+        if item.current_items:
+          print("Your items:", ", ".join(item.current_items))
+          chosen_item = input("Which item do you want to use? ").strip()
+          if chosen_item in item.current_items:
+            if chosen_item == "Health Potion":
+              heal_amount = 30
+              self.health += heal_amount
+              print(f"{Fore.green}You used a Health Potion and healed for {heal_amount} health!{Style.reset}")
+              item.current_items.remove(chosen_item)
+            else:
+              print(f"{Fore.yellow}You used {chosen_item}, but nothing happened.{Style.reset}")
+          else:
+            print("You don't have that item.")
+        else:
+          print("You have no items to use.")
       else:
         print("Invalid action. Please choose attack, heal, or quit.")
       # check player health
@@ -75,7 +91,37 @@ class enemy:
       return True
     return False
 
+class items:
+  def __init__(self):
+    self.item_list = ["Health Potion", "Sword", "Shield"]
+    self.current_items = []
+
+  def add_item(self, item):
+    if item in self.item_list:
+      self.current_items.append(item)
+      print(f"{Fore.yellow}You obtained a {item}!{Style.reset}")
+    else:
+      print("Item does not exist.")
+
+  def remove_item(self, item):
+    if item in self.current_items:
+      self.current_items.remove(item)
+      print(f"{Fore.yellow}You used a {item}.{Style.reset}")
+    else:
+      print("You don't have that item.")
+
+  def list_items(self):
+    return self.current_items
+
+  def clear_items(self):
+    self.current_items = []
+    print("All items have been cleared.")
+
+  def item_count(self):
+    return len(self.current_items)
+
 enemy = enemy()
 game = game()
+item = items()
 
 game.__init__()
