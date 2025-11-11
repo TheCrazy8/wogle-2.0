@@ -46,6 +46,7 @@ class game:
             elif action == "quit":
                 print("You quit the game.")
                 self.is_over = True
+                exit()
             elif action == "use item":
                 if items.current_items != []:
                     print("Your items:", ", ".join(items.current_items))
