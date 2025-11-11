@@ -87,7 +87,7 @@ class enemy:
     else:
       attack_chance = 0.4
     if random.random() < attack_chance:
-      print(f"{Fore.red}Enemy Attacked! Dealt {self.damage} damage!{Style.reset}")
+      print(f"[red]Enemy Attacked! Dealt {self.damage} damage![/red]")
       return True
     return False
 
@@ -99,14 +99,14 @@ class items:
   def add_item(self, item):
     if item in self.item_list:
       self.current_items.append(item)
-      print(f"{Fore.yellow}You obtained a {item}!{Style.reset}")
+      print(f"[yellow]You obtained a {item}![/yellow]")
     else:
       print("Item does not exist.")
 
   def remove_item(self, item):
     if item in self.current_items:
       self.current_items.remove(item)
-      print(f"{Fore.yellow}You used a {item}.{Style.reset}")
+      print(f"[yellow]You used a {item}.[/yellow]")
     else:
       print("You don't have that item.")
 
