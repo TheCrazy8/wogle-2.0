@@ -1,12 +1,11 @@
 import datetime
 import random
 try: 
-  from colored import Fore, Back, Style
-except Exception:
-  Fore = None
-  Back = None
-  Style = None
-  print("could not install colored, text will be default")
+  from rich import print
+except ImportError:
+  rich = None
+Fore = None
+Style = None
 
 class game:
   def __init__(self):
@@ -35,14 +34,14 @@ class game:
       if action == "attack":
         damage = random.randint(5, 15)
         enemy.health -= damage
-        print(f"{Fore.green}You attacked the enemy! Dealt {damage} damage!{Style.reset}")
+        print(f"[green]You attacked the enemy! Dealt {damage} damage![/green]")
         self.score += damage
         if enemy.health <= 0:
-          print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
+          print(f"[blue]Enemy defeated![/blue] You win!")
       elif action == "heal":
         heal_amount = random.randint(10, 20)
         self.health += heal_amount
-        print(f"{Fore.green}You healed yourself for {heal_amount} health!{Style.reset}")
+        print(f"[green]You healed yourself for {heal_amount} health![/green]")
       elif action == "quit":
         print("You quit the game.")
         self.is_over = True
@@ -54,10 +53,10 @@ class game:
             if chosen_item == "Health Potion":
               heal_amount = 30
               self.health += heal_amount
-              print(f"{Fore.green}You used a Health Potion and healed for {heal_amount} health!{Style.reset}")
+              print(f"[green]You used a Health Potion and healed for {heal_amount} health![/green]")
               items.current_items.remove(chosen_item)
             else:
-              print(f"{Fore.yellow}You used {chosen_item}, but nothing happened.{Style.reset}")
+              print(f"[yellow]You used {chosen_item}, but nothing happened.[/yellow]")
           else:
             print("You don't have that item.")
         else:
@@ -66,11 +65,11 @@ class game:
         print("Invalid action. Please choose attack, heal, or quit.")
       # check player health
       if self.health <= 0:
-        print(f"{Fore.red}You have been defeated! Game over.{Style.reset}")
+        print(f"[red]You have been defeated! Game over.[/red]")
         self.is_over = True
       
       if enemy.health <= 0:
-        print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
+        print(f"[blue]Enemy defeated! You win![/blue]")
         enemy.initialhealth += enemy.initialhealth // 2
         enemy.health = enemy.initialhealth
         self.level += 1
