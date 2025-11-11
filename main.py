@@ -13,7 +13,7 @@ class game:
     self.start_time = datetime.datetime.now()
     self.score = 0
     self.level = 1
-    self.is_over = False
+    self.is_over = Falsehea
     self.health = 100
     self.ticks = 0
     self.start()
