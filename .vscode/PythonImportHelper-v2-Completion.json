@@ -1,0 +1,74 @@
+[
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "game",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class game:\n    def __init__(self):\n        self.score = 0\n        self.level = 1\n        self.start_time = datetime.datetime.now()\n        self.is_over = False\n        self.health = 100\n        self.ticks = 0\n        self.start()\n        enemy.__init__()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "enemy",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class enemy:\n    def __init__(self):\n        self.damage = 10\n        self.initialhealth = 50\n        self.health = 50\n    def turn(self):\n        if self.health > self.initialhealth * 0.3:\n            attack_chance = 0.7\n        else:\n            attack_chance = 0.4",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "items",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class items:\n    def __init__(self):\n        self.item_list = [\"Health Potion\", \"Sword\", \"Shield\"]\n        self.current_items = []\n    def add_item(self, item):\n        if item in self.item_list:\n            self.current_items.append(item)\n            print(f\"{Fore.yellow}You obtained a {item}!{Style.reset}\")\n        else:\n            print(\"Item does not exist.\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "items",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "items = items()\nenemy = enemy()\ngame = game()\ngame.__init__()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "enemy",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "enemy = enemy()\ngame = game()\ngame.__init__()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "game",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "game = game()\ngame.__init__()",
+        "detail": "main",
+        "documentation": {}
+    }
+]
