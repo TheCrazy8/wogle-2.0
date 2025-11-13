@@ -19,6 +19,7 @@ class game:
         self.start()
         enemy.__init__()
         items.__init__()
+        environment.__init__()
 
     def start(self):
         print("Game started!")
@@ -122,6 +123,13 @@ class items:
     def item_count(self):
         return len(self.current_items)
 
+class environment:
+    def __init__(self):
+        self.envtype = ""
+        self.envtypes = ["Hot", "Cold", "Tempral", "Moist", "Soggy", "Soaked", "Dry", "Parched", "Arid"]
+        self.envtype = random.
+
+environment = environment()
 items = items()
 enemy = enemy()
 game = game()
