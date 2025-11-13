@@ -1,6 +1,6 @@
 import datetime
 import random
-try: 
+try:
     from colored import Fore, Back, Style
 except Exception:
     Fore = None
