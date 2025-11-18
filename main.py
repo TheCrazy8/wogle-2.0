@@ -27,6 +27,12 @@ class game:
         self.play()
 
     def play(self):
+        if self.health <= 0:
+            print(f"{Fore.red}You have been defeated! Game over.{Style.reset}")
+            self.is_over = True
+            while True:
+                datetime.wait(1)
+                pass
         while not self.is_over == True:
             if self.health > self.maxhealth:
                 self.health = self.maxhealth
