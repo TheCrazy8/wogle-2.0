@@ -37,6 +37,12 @@ class game:
             if self.health > self.maxhealth:
                 self.health = self.maxhealth
             self.ticks += 1
+            if self.health <= 0:
+                print(f"{Fore.red}You have been defeated! Game over.{Style.reset}")
+                self.is_over = True
+                while True:
+                    datetime.wait(1)
+                    pass
             # enemy turn
             if enemy.turn():
                 self.health -= enemy.damage
