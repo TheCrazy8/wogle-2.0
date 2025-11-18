@@ -6,7 +6,7 @@ except Exception:
     Fore = None
     Back = None
     Style = None
-    print("could not install colored, text will be default")
+    print("could not install colored, text will be default (use \"pip install colored\" to fix)")
 
 class game:
     def __init__(self):
