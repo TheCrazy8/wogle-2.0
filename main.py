@@ -37,6 +37,7 @@ class game:
                 damage = random.randint(5, 15)
                 enemy.health -= damage
                 print(f"{Fore.green}You attacked the enemy! Dealt {damage} damage!{Style.reset}")
+                print(f"Enemy health: {enemy.health}")
                 self.score += damage
                 if enemy.health <= 0:
                     print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
