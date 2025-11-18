@@ -66,7 +66,7 @@ class game:
             elif action == "use item":
                 if items.current_items != []:
                     print("Your items:", ", ".join(items.current_items))
-                    chosen_item = input("Which item do you want to use? ").strip()
+                    chosen_item = input("Which item do you want to use? ").strip().lower()
                     if chosen_item in items.current_items:
                         if chosen_item == "Health Potion":
                             heal_amount = 30
