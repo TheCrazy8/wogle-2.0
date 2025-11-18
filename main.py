@@ -40,6 +40,10 @@ class game:
                 self.score += damage
                 if enemy.health <= 0:
                     print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
+                    enemy.initialhealth += enemy.initialhealth // 2
+                    enemy.health = enemy.initialhealth
+                    self.level += 1
+            print(f"Level up! You are now on level {self.level}.")
             elif action == "heal":
                 heal_amount = random.randint(10, 20)
                 self.health += heal_amount
