@@ -68,7 +68,7 @@ class game:
                     print("Your items:", ", ".join(items.current_items))
                     chosen_item = input("Which item do you want to use? ").strip().lower()
                     if chosen_item in items.current_items:
-                        if chosen_item == "Health Potion":
+                        if chosen_item == "Health Potion".lower():
                             heal_amount = 30
                             self.health += heal_amount
                             print(f"{Fore.green}You used a Health Potion and healed for {heal_amount} health!{Style.reset}")
