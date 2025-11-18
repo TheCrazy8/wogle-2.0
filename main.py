@@ -127,7 +127,8 @@ class environment:
     def __init__(self):
         self.envtype = ""
         self.envtypes = ["Hot", "Cold", "Tempral", "Moist", "Soggy", "Soaked", "Dry", "Parched", "Arid"]
-        self.envtype = random.
+        self.envtype = random.choice(self.envtypes)
+        print(f"Environment type: {self.envtype}")
 
 environment = environment()
 items = items()
