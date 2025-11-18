@@ -32,6 +32,11 @@ class game:
             if enemy.turn():
                 self.health -= enemy.damage
             # player turn
+            itemgive = random.randint(1, 10)
+            if itemgive > 8:
+                new_item = random.choice(items.item_list)
+                items.add_item(new_item)
+            print(f"Your health: {self.health}")
             action = input("Choose your action (attack/heal/quit/use item): ").strip().lower()
             if action == "attack":
                 damage = random.randint(5, 15)
