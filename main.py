@@ -42,7 +42,7 @@ class game:
                 self.is_over = True
                 while True:
                     datetime.wait(1)
-                    pass
+                    egg = 1
             # enemy turn
             if enemy.turn():
                 self.health -= enemy.damage
