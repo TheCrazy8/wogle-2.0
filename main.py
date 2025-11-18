@@ -85,6 +85,9 @@ class game:
         if self.health <= 0:
             print(f"{Fore.red}You have been defeated! Game over.{Style.reset}")
             self.is_over = True
+            while True:
+                datetime.wait(1)
+                pass
 
         if enemy.health <= 0:
             print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
