@@ -52,6 +52,7 @@ class game:
                     enemy.initialhealth += enemy.initialhealth // 2
                     enemy.health = enemy.initialhealth
                     enemy.damage += 5
+                    self.maxhealth += 1
                     self.level += 1
                     print(f"Level up! You are now on level {self.level}.")
             elif action == "heal":
@@ -90,6 +91,7 @@ class game:
             enemy.initialhealth += enemy.initialhealth // 2
             enemy.health = enemy.initialhealth
             enemy.damage += 5
+            self.maxhealth += 1
             self.level += 1
             print(f"Level up! You are now on level {self.level}.")
 
