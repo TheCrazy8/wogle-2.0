@@ -15,6 +15,7 @@ class game:
         self.start_time = datetime.datetime.now()
         self.is_over = False
         self.health = 100
+        self.maxhealth = 250
         self.ticks = 0
         self.start()
         enemy.__init__()
@@ -27,6 +28,8 @@ class game:
 
     def play(self):
         while not self.is_over == True:
+            if self.health > self.maxhealth:
+                self.health = self.maxhealth
             self.ticks += 1
             # enemy turn
             if enemy.turn():
@@ -48,6 +51,7 @@ class game:
                     print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
                     enemy.initialhealth += enemy.initialhealth // 2
                     enemy.health = enemy.initialhealth
+                    enemy.damage += 5
                     self.level += 1
                     print(f"Level up! You are now on level {self.level}.")
             elif action == "heal":
@@ -85,6 +89,7 @@ class game:
             print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
             enemy.initialhealth += enemy.initialhealth // 2
             enemy.health = enemy.initialhealth
+            enemy.damage += 5
             self.level += 1
             print(f"Level up! You are now on level {self.level}.")
 
