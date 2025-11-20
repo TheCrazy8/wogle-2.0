@@ -23,14 +23,14 @@ class Game:
         self.start()
         Enemy.__init__()
         Item.__init__()
-        environment.__init__()
+        Environment.__init__()
 
     def start(self):
         print("Game started!")
         self.play()
 
     def play(self):
-        environment.envtext()
+        Environment.envtxt()
         if self.health <= 0:
             print(f"{Fore.red}You have been defeated! Game over.{Style.reset}")
             self.is_over = True
@@ -159,7 +159,7 @@ class Item:
     def item_count(self):
         return len(self.current_items)
 
-class environment:
+class Environment:
     def __init__(self):
         self.envtype = ""
         self.hotadj = random.choice(["sears", "burns", "sizzles"])
@@ -193,11 +193,11 @@ class environment:
         elif self.envtype == "Arid":
             print(f"Yee-Haw!  The arid environment makes you feel like a cowboy!")
         else:
-            print("ERROR: environment not found")
+            print("ERROR: Environment not found")
         self.envtype = random.choice(self.envtypes)
             
 
-environment = environment()
+Environment = Environment()
 Item = Item()
 Enemy = Enemy()
 Game = Game()
