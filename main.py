@@ -165,19 +165,27 @@ class environment:
         self.coldadj = random.choice(["chills", "freezes", "cools"])
         self.tempadj = random.choice(["sweat", "shiver", "become quite discomfortable"])
         self.madj = random.choice(["MOIST", "MOIST"])
+        self.soggdj = random.choice(["floods", "soaks", "wets"])
+        self.soadj = random.choice(["sag", "squelch", "slip"]) 
         self.envtypes = ["Hot", "Cold", "Tempral", "Moist", "Soggy", "Soaked", "Dry", "Parched", "Arid"]
         self.envtype = random.choice(self.envtypes)
         print(f"Environment type: {self.envtype}")
 
     def envtxt(self):
         if self.envtype == "Hot":
-            print(f"The heat {self.hotadj} your skin")
+            print(f"The heat {self.hotadj} your skin.")
         elif self.envtype == "Cold":
-            print(f"The air {self.coldadj} your bones")
+            print(f"The air {self.coldadj} your bones.")
         elif self.envtype == "Tempral":
             print(f"The rapidly changing temperature causes you to {self.tempadj}.")
         elif self.envtype == "Moist":
-            print(f"{self.madj}"
+            print(f"{self.madj}")
+        elif self.envtype == "Soggy":
+            print(f"The sogginess {self.soggdj} your boots.")
+        elif self.envtype == "Soaked":
+            print(f"The wet ground causes your footsteps to {self.soadj}.")
+        elif self.envtype == "Dry":
+            
 
 environment = environment()
 items = items()
