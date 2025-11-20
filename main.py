@@ -131,7 +131,7 @@ class enemy:
 
 class items:
     def __init__(self):
-        self.item_list = ["Health Potion", "Sword", "Shield"]
+        self.item_list = ["Health Potion", "Sword", "Shield", "Pasta Noodle"]
         self.current_items = []
 
     def add_item(self, item):
