@@ -30,6 +30,7 @@ class game:
         self.play()
 
     def play(self):
+        environment.envtext()
         if self.health <= 0:
             print(f"{Fore.red}You have been defeated! Game over.{Style.reset}")
             self.is_over = True
@@ -167,6 +168,7 @@ class environment:
         self.madj = random.choice(["MOIST", "MOIST"])
         self.soggdj = random.choice(["floods", "soaks", "wets"])
         self.soadj = random.choice(["sag", "squelch", "slip"]) 
+        self.dryj = random.choice(["skin", "head", "throat"])
         self.envtypes = ["Hot", "Cold", "Tempral", "Moist", "Soggy", "Soaked", "Dry", "Parched", "Arid"]
         self.envtype = random.choice(self.envtypes)
         print(f"Environment type: {self.envtype}")
@@ -185,6 +187,14 @@ class environment:
         elif self.envtype == "Soaked":
             print(f"The wet ground causes your footsteps to {self.soadj}.")
         elif self.envtype == "Dry":
+            print(f"The dry air hurts your {self.dryj}.")
+        elif self.envtype == "Parched":
+            print(f"You   T H I R S T   in the parched heat.")
+        elif self.envtype == "Arid":
+            print(f"Yee-Haw!  The arid environment makes you feel like a cowboy!")
+        else:
+            print("ERROR: environment not found")
+        self.envtype = random.choice(self.envtypes)
             
 
 environment = environment()
