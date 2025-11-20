@@ -200,5 +200,5 @@ Environment = Environment()
 Enemy = Enemy()
 Item = Item()
 Game = Game()
-Game.__init__()
 
+Game.__init__()
