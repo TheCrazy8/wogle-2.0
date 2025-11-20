@@ -165,7 +165,7 @@ class Environment:
         self.hotadj = random.choice(["sears", "burns", "sizzles"])
         self.coldadj = random.choice(["chills", "freezes", "cools"])
         self.tempadj = random.choice(["sweat", "shiver", "become quite discomfortable"])
-        self.madj = random.choice(["MOIST", "MOIST"])
+        self.madj = random.choice(["MOIST", "MOIST", "M O I S T"])
         self.soggdj = random.choice(["floods", "soaks", "wets"])
         self.soadj = random.choice(["sag", "squelch", "slip"]) 
         self.dryj = random.choice(["skin", "head", "throat"])
