@@ -11,7 +11,7 @@ except Exception:
     if not input("") == None:
         sys.exit()
 
-class game:
+class Game:
     def __init__(self):
         self.score = 0
         self.level = 1
@@ -21,8 +21,8 @@ class game:
         self.maxhealth = 250
         self.ticks = 0
         self.start()
-        enemy.__init__()
-        items.__init__()
+        Enemy.__init__()
+        Item.__init__()
         environment.__init__()
 
     def start(self):
@@ -48,26 +48,26 @@ class game:
                     datetime.wait(1)
                     egg = 1
             # enemy turn
-            if enemy.turn():
-                self.health -= enemy.damage
+            if Enemy.turn():
+                self.health -= Enemy.damage
             # player turn
             itemgive = random.randint(1, 10)
             if itemgive > 8:
-                new_item = random.choice(items.item_list)
-                items.add_item(new_item)
+                new_item = random.choice(Item.item_list)
+                Item.add_item(new_item)
             print(f"Your health: {self.health}")
             action = input("Choose your action (attack/heal/quit/use item): ").strip().lower()
             if action == "attack":
                 damage = random.randint(5, 15)
-                enemy.health -= damage
+                Enemy.health -= damage
                 print(f"{Fore.green}You attacked the enemy! Dealt {damage} damage!{Style.reset}")
-                print(f"Enemy health: {enemy.health}")
+                print(f"Enemy health: {Enemy.health}")
                 self.score += damage
-                if enemy.health <= 0:
+                if Enemy.health <= 0:
                     print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
-                    enemy.initialhealth += enemy.initialhealth // 2
-                    enemy.health = enemy.initialhealth
-                    enemy.damage += 5
+                    Enemy.initialhealth += Enemy.initialhealth // 2
+                    Enemy.health = Enemy.initialhealth
+                    Enemy.damage += 5
                     self.maxhealth += 1
                     self.level += 1
                     print(f"Level up! You are now on level {self.level}.")
@@ -80,15 +80,15 @@ class game:
                 self.is_over = True
                 exit()
             elif action == "use item":
-                if items.current_items != []:
-                    print("Your items:", ", ".join(items.current_items))
+                if Item.current_items != []:
+                    print("Your items:", ", ".join(Item.current_items))
                     chosen_item = input("Which item do you want to use? ").strip().lower()
-                    if chosen_item in items.current_items:
+                    if chosen_item in Item.current_items:
                         if chosen_item == "Health Potion".lower():
                             heal_amount = 30
                             self.health += heal_amount
                             print(f"{Fore.green}You used a Health Potion and healed for {heal_amount} health!{Style.reset}")
-                            items.current_items.remove(chosen_item)
+                            Item.current_items.remove(chosen_item)
                         else:
                             print(f"{Fore.yellow}You used {chosen_item}, but nothing happened.{Style.reset}")
                     else:
@@ -105,16 +105,16 @@ class game:
                 datetime.wait(1)
                 pass
 
-        if enemy.health <= 0:
+        if Enemy.health <= 0:
             print(f"{Fore.blue}Enemy defeated! You win!{Style.reset}")
-            enemy.initialhealth += enemy.initialhealth // 2
-            enemy.health = enemy.initialhealth
-            enemy.damage += 5
+            Enemy.initialhealth += Enemy.initialhealth // 2
+            Enemy.health = Enemy.initialhealth
+            Enemy.damage += 5
             self.maxhealth += 1
             self.level += 1
             print(f"Level up! You are now on level {self.level}.")
 
-class enemy:
+class Enemy:
     def __init__(self):
         self.damage = 10
         self.initialhealth = 50
@@ -130,7 +130,7 @@ class enemy:
             return True
         return False
 
-class items:
+class Item:
     def __init__(self):
         self.item_list = ["Health Potion", "Sword", "Shield"]
         self.current_items = []
@@ -198,9 +198,9 @@ class environment:
             
 
 environment = environment()
-items = items()
-enemy = enemy()
-game = game()
+Item = Item()
+Enemy = Enemy()
+Game = Game()
 
-game.__init__()
+Game.__init__()
 
