@@ -131,7 +131,7 @@ class enemy:
 
 class items:
     def __init__(self):
-        self.item_list = ["Health Potion", "Sword", "Shield", "Pasta Noodle"]
+        self.item_list = ["Health Potion", "Sword", "Shield"]
         self.current_items = []
 
     def add_item(self, item):
@@ -161,9 +161,22 @@ class items:
 class environment:
     def __init__(self):
         self.envtype = ""
+        self.hotadj = random.choice(["sears", "burns", "sizzles"])
+        self.coldadj = random.choice(["chills", "freezes", "cools"])
+        self.tempadj = random.choice(["sweat", "shiver", "become quite discomfortable"])
         self.envtypes = ["Hot", "Cold", "Tempral", "Moist", "Soggy", "Soaked", "Dry", "Parched", "Arid"]
         self.envtype = random.choice(self.envtypes)
         print(f"Environment type: {self.envtype}")
+
+    def envtxt(self):
+        if self.envtype == "Hot":
+            print(f"The heat {self.hotadj} your skin")
+        elif self.envtype == "Cold":
+            print(f"The air {self.coldadj} your bones")
+        elif self.envtype == "Tempral":
+            print(f"The rapidly changing temperature causes you to {self.tempadj}.")
+        elif self.envtype == "Moist":
+            pass
 
 environment = environment()
 items = items()
