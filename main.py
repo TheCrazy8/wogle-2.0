@@ -171,9 +171,9 @@ class Environment:
         self.dryj = random.choice(["skin", "head", "throat"])
         self.envtypes = ["Hot", "Cold", "Tempral", "Moist", "Soggy", "Soaked", "Dry", "Parched", "Arid"]
         self.envtype = random.choice(self.envtypes)
-        print(f"Environment type: {self.envtype}")
 
     def envtxt(self):
+        print(f"Environment type: {self.envtype}")
         if self.envtype == "Hot":
             print(f"The heat {self.hotadj} your skin.")
         elif self.envtype == "Cold":
@@ -196,11 +196,5 @@ class Environment:
             print("ERROR: Environment not found")
         self.envtype = random.choice(self.envtypes)
             
-
-Environment = Environment()
-Item = Item()
-Enemy = Enemy()
-Game = Game()
-
 Game.__init__()
 
