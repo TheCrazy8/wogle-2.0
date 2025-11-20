@@ -195,6 +195,10 @@ class Environment:
         else:
             print("ERROR: Environment not found")
         self.envtype = random.choice(self.envtypes)
-            
+
+Environment = Environment()
+Enemy = Enemy()
+Item = Item()
+Game = Game()
 Game.__init__()
 
